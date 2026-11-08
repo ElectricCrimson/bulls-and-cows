@@ -2,7 +2,6 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const DotenvWebpackPlugin = require('dotenv-webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
@@ -20,7 +19,7 @@ const baseConfig = {
         include: [path.resolve(__dirname, 'src')],
       },
       {
-        test: /\.(svg|ico)$/i,
+        test: /\.(svg|ico|png)$/i,
         type: 'asset/resource',
       },
     ],
@@ -33,11 +32,10 @@ const baseConfig = {
     path: path.resolve(__dirname, './dist'),
   },
   plugins: [
-    new DotenvWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       filename: 'index.html',
-      favicon: './src/assets/icons/favicon.ico',
+      favicon: './src/assets/icons/favicon.png',
     }),
     new CleanWebpackPlugin(),
     new ESLintPlugin({
