@@ -9,3 +9,8 @@ export interface INotation {
   chars: string;
   maxLength: number;
 }
+
+export interface IAnimals {
+  bulls: number;
+  cows: number;
+}
