@@ -1,14 +1,4 @@
-export enum Base {
-  'bin' = 2,
-  'oct' = 8,
-  'dec' = 10,
-  'hex' = 16,
-}
-
-interface INotation {
-  chars: string;
-  maxLength: number;
-}
+import { Base, INotation } from '../types/types';
 
 export const notations: { [key in Base]: () => INotation } = {
   [Base.bin]: () => ({
