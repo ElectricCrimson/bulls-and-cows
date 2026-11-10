@@ -1,5 +1,6 @@
 import { createDigitValidator } from './createDigitValidator';
-import { notations, Base } from './notation';
+import { Base } from '../types/types';
+import { notations } from './notation';
 
 export function isValidGuess(guess: string, length: number, base: Base): boolean {
   if (!guess.trim()) return false;

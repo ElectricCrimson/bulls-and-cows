@@ -1,4 +1,5 @@
-import { notations, Base } from './notation';
+import { Base } from '../types/types';
+import { notations } from './notation';
 
 export const createDigitValidator =
   (base: Base) =>
