@@ -64,6 +64,23 @@ html {
   transform: scale(1.1);
 }
 
+.wrapper-title {
+  max-width: 35rem;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.guess-title {
+  color: var(--main-color-text);
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.wrapper-score {
+  gap: 4rem;
+}
+
 .input {
   width: 35rem;
   height: 4rem;

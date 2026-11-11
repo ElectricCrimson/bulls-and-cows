@@ -36,6 +36,23 @@ export function createGameBoard(): void {
     numberWrapper.append(item);
   });
 
+  const historyTitleWrapper = createWrapper('wrapper-title');
+  const guessText = document.createElement('p');
+  guessText.innerHTML = 'YOUR GUESSES';
+  guessText.classList.add('guess-title');
+
+  const scoreWrapper = createWrapper('wrapper-score');
+  const bullsText = document.createElement('p');
+  bullsText.innerHTML = 'BULLS';
+  bullsText.classList.add('guess-title');
+
+  const cowsText = document.createElement('p');
+  cowsText.innerHTML = 'COWS';
+  cowsText.classList.add('guess-title');
+  scoreWrapper.append(bullsText, cowsText);
+
+  historyTitleWrapper.append(guessText, scoreWrapper);
+
   const main = document.createElement('main');
   main.classList.add('main');
 
@@ -55,7 +72,7 @@ export function createGameBoard(): void {
 
   headerWrapper.append(notationWrapper, numberWrapper);
   header.append(headerWrapper);
-  main.append(historyWrapper, inputWrapper);
+  main.append(historyTitleWrapper, historyWrapper, inputWrapper);
   footer.append(tableWrapper);
   body.append(header, main, footer);
 }
