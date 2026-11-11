@@ -1,6 +1,6 @@
 import { createHistoryList } from './createHistoryList';
 
-function createWrapper(className?: string): HTMLDivElement {
+export function createWrapper(className?: string): HTMLDivElement {
   const wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');
   if (className) wrapper.classList.add(`${className}`);
@@ -83,7 +83,7 @@ export function createGameBoard(): void {
 
   const tableWrapper = createWrapper('wrapper-table');
   const historyWrapper = createWrapper('wrapper-history');
-  const historyList = createHistoryList();
+  const historyList = createHistoryList([]);
   historyWrapper.append(historyList);
 
   const footer = document.createElement('footer');

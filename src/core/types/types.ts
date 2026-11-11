@@ -14,3 +14,9 @@ export interface IAnimals {
   bulls: number;
   cows: number;
 }
+
+export interface IHistory {
+  guess: string;
+  bulls: number;
+  cows: number;
+}

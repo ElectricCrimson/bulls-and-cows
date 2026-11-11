@@ -10,6 +10,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -85,6 +87,7 @@ html {
   letter-spacing: 1px;
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .wrapper-score {
@@ -92,7 +95,7 @@ html {
 }
 
 .input {
-  width: 26rem;
+  width: 25rem;
   height: 4.5rem;
   border-radius: 1rem;
   border: none;
@@ -119,10 +122,52 @@ html {
 .wrapper-history,
 .table-wrapper {
   margin: 0 auto;
-  width: 35rem;
+  justify-content: space-evenly;
+  width: 40rem;
   height: 15rem;
   overflow-y: auto;
+}
+
+.list-history {
+  display: flex;
   flex-direction: column;
+  padding: 0;
+}
+
+.list-item {
+  width: 35rem;
+  height: 3rem;
+  font-weight: 500;
+  display: flex;
+  list-style: none;
+  border-bottom: 2px solid var(--main-color);
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.list-item .wrapper-title {
+  margin: 0;
+}
+
+.list-item .guess-title {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.list-item .wrapper-score {
+  margin-right: 1.5rem;
+  gap: 7rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color-text);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color-text);
+  border-radius: 5px;
 }
 
 .wrapper-history {
