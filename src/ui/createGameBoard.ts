@@ -7,6 +7,17 @@ export function createWrapper(className?: string): HTMLDivElement {
   return wrapper;
 }
 
+function handleHeaderBtns(e: Event, wrapper: HTMLDivElement) {
+  if (!(e.target instanceof HTMLElement)) return;
+  const currentBtn = e.target.closest('.btn');
+
+  if (currentBtn) {
+    const activeBtn = wrapper.querySelector('.btn-active');
+    activeBtn?.classList.remove('btn-active');
+    currentBtn.classList.add('btn-active');
+  }
+}
+
 export function createGameBoard(): void {
   const notationButtons = ['bin', 'oct', 'dec', 'hex'];
   const notationIds = [2, 8, 10, 16];
@@ -21,6 +32,9 @@ export function createGameBoard(): void {
   const headerWrapper = createWrapper('wrapper-header');
   const notationWrapper = createWrapper('wrapper-notation');
   const numberWrapper = createWrapper('wrapper-number');
+
+  notationWrapper.addEventListener('click', (e) => handleHeaderBtns(e, notationWrapper));
+  numberWrapper.addEventListener('click', (e) => handleHeaderBtns(e, numberWrapper));
 
   notationButtons.forEach((button, i) => {
     const item = document.createElement('button');
