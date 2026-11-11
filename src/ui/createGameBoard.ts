@@ -19,8 +19,8 @@ export function createGameBoard(): void {
   header.classList.add('header');
 
   const headerWrapper = createWrapper('wrapper-header');
-  const notationWrapper = createWrapper();
-  const numberWrapper = createWrapper();
+  const notationWrapper = createWrapper('wrapper-notation');
+  const numberWrapper = createWrapper('wrapper-number');
 
   notationButtons.forEach((button, i) => {
     const item = document.createElement('button');
@@ -37,6 +37,10 @@ export function createGameBoard(): void {
     item.id = `num-${numberButtons[i]}`;
     numberWrapper.append(item);
   });
+
+  const startButton = document.createElement('button');
+  startButton.innerHTML = 'start';
+  startButton.classList.add('btn', 'btn-start');
 
   const historyTitleWrapper = createWrapper('wrapper-title');
   const guessText = document.createElement('p');
@@ -89,7 +93,7 @@ export function createGameBoard(): void {
   const footer = document.createElement('footer');
   footer.classList.add('footer');
 
-  headerWrapper.append(notationWrapper, numberWrapper);
+  headerWrapper.append(notationWrapper, numberWrapper, startButton);
   header.append(headerWrapper);
   main.append(historyTitleWrapper, historyWrapper, inputWrapper);
   footer.append(tableWrapper);

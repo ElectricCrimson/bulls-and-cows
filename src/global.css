@@ -26,7 +26,7 @@ html {
 }
 
 .header {
-  margin: 5rem 0;
+  margin: 3rem 0;
 }
 
 .wrapper {
@@ -38,10 +38,11 @@ html {
 .wrapper-header {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  align-items: center;
+  gap: 3rem;
 }
 
-.wrapper-header .wrapper:last-child {
+.wrapper-number {
   gap: 2.7rem;
 }
 
@@ -74,6 +75,26 @@ html {
 
 .btn-check {
   height: 4.5rem;
+}
+
+.btn-start {
+  width: 15rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn.btn-active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--background-color);
+  transform: scale(1);
+}
+
+.btn.btn-active:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--background-color);
+  transform: scale(1);
 }
 
 .wrapper-title {
