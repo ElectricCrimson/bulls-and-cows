@@ -1,3 +1,5 @@
+import { createHistoryList } from './createHistoryList';
+
 function createWrapper(className?: string): HTMLDivElement {
   const wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');
@@ -56,16 +58,33 @@ export function createGameBoard(): void {
   const main = document.createElement('main');
   main.classList.add('main');
 
+  const form = document.createElement('form');
+  form.classList.add('form');
+
   const inputWrapper = createWrapper('wrapper-input');
   const input = document.createElement('input');
   input.classList.add('input');
   input.type = 'text';
   input.id = 'input';
   input.maxLength = 30;
-  inputWrapper.append(input);
+  input.addEventListener('input', (e) => {
+    if (e.target instanceof HTMLInputElement) {
+      const value = e.target.value;
+      console.log(value);
+    }
+  });
+
+  const checkButton = document.createElement('button');
+  checkButton.classList.add('btn', 'btn-check');
+  checkButton.innerHTML = 'check';
+
+  form.append(input, checkButton);
+  inputWrapper.append(form);
 
   const tableWrapper = createWrapper('wrapper-table');
   const historyWrapper = createWrapper('wrapper-history');
+  const historyList = createHistoryList();
+  historyWrapper.append(historyList);
 
   const footer = document.createElement('footer');
   footer.classList.add('footer');

@@ -43,6 +43,12 @@ html {
   gap: 2.7rem;
 }
 
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .btn {
   font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
@@ -64,6 +70,10 @@ html {
   transform: scale(1.1);
 }
 
+.btn-check {
+  height: 4.5rem;
+}
+
 .wrapper-title {
   max-width: 35rem;
   justify-content: space-between;
@@ -82,8 +92,8 @@ html {
 }
 
 .input {
-  width: 35rem;
-  height: 4rem;
+  width: 26rem;
+  height: 4.5rem;
   border-radius: 1rem;
   border: none;
   border: 2px solid var(--main-color);
